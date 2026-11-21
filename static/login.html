@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Food">
+<meta name="theme-color" content="#f2f0e9">
+<meta name="robots" content="noindex, nofollow">
+<title>Food · Sign in</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="/icon-180.png">
+<link rel="stylesheet" href="/app.css">
+</head>
+<body>
+<div class="app login">
+  <header class="top"><h1 class="brand"><img src="/icon.svg" alt="" width="28" height="28">Food</h1></header>
+  <main>
+    <form class="panel login-card" id="login">
+      <label class="lbl" for="pw">Password</label>
+      <input class="field" type="password" id="pw" name="password" autocomplete="current-password" required autofocus>
+      <p class="err" id="err" role="alert" hidden></p>
+      <button class="btn primary" type="submit">Sign in</button>
+    </form>
+  </main>
+</div>
+<script src="/login.js"></script>
+</body>
+</html>

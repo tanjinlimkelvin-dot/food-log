@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="Food">
+<meta name="theme-color" content="#f2f0e9">
+<meta name="robots" content="noindex, nofollow">
+<title>Food</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="/icon-180.png">
+<link rel="preload" href="/newsreader-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/app.css">
+</head>
+<body>
+<div class="app">
+  <header class="top">
+    <h1 class="brand"><img src="/icon.svg" alt="" width="28" height="28">Food</h1>
+    <div class="sync" id="sync" role="status" aria-live="polite"></div>
+  </header>
+
+  <main id="view" tabindex="-1"></main>
+
+  <nav class="tabs" aria-label="Main">
+    <a href="#today" data-tab="today"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 10.5 12 4l8 6.5V20a1 1 0 0 1-1 1h-4.5v-6h-5v6H5a1 1 0 0 1-1-1z"/></svg>Today</a>
+    <button type="button" class="fab" id="fab" aria-label="Food AI: snap a meal or ask"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 9A2.5 2.5 0 0 1 6 6.5h1.6l1.3-2h4.2l1.3 2"/><path d="M20.5 12.5v5A2.5 2.5 0 0 1 18 20H6a2.5 2.5 0 0 1-2.5-2.5V9"/><circle cx="12" cy="13.2" r="3.4"/><path d="M19 2.5l.75 2 2 .75-2 .75L19 8l-.75-2-2-.75 2-.75z"/></svg></button>
+    <a href="#history" data-tab="history"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20h16M6.5 16.5V11M12 16.5V5.5M17.5 16.5V8.5"/></svg>History</a>
+  </nav>
+</div>
+
+<!-- Day details -->
+<dialog id="day" class="sheet" aria-labelledby="day-title" closedby="any">
+  <div class="grab" aria-hidden="true"></div>
+  <div class="sheet-h">
+    <h2 id="day-title">Day details</h2>
+    <button type="button" class="icon-btn" data-close aria-label="Close"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+  </div>
+  <div id="day-body"></div>
+</dialog>
+
+<!-- Meal details -->
+<dialog id="meal" class="sheet" aria-labelledby="meal-title" closedby="any">
+  <div class="grab" aria-hidden="true"></div>
+  <div class="sheet-h">
+    <h2 id="meal-title">Meal</h2>
+    <button type="button" class="icon-btn" data-close aria-label="Close"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+  </div>
+  <div id="meal-body"></div>
+</dialog>
+
+<!-- My foods -->
+<dialog id="foods" class="sheet" aria-labelledby="foods-title" closedby="any">
+  <div class="grab" aria-hidden="true"></div>
+  <div class="sheet-h">
+    <h2 id="foods-title">My foods</h2>
+    <button type="button" class="icon-btn" data-close aria-label="Close"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+  </div>
+  <div id="foods-body"></div>
+</dialog>
+
+<!-- Add / review meal -->
+<dialog id="add" class="sheet" aria-labelledby="add-title" closedby="any">
+  <div class="grab" aria-hidden="true"></div>
+  <div class="sheet-h">
+    <h2 id="add-title">Review meal</h2>
+    <button type="button" class="icon-btn" data-close aria-label="Close"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+  </div>
+  <div id="add-body"></div>
+</dialog>
+
+<!-- Edit a saved meal -->
+<dialog id="edit" class="sheet" aria-labelledby="edit-title" closedby="any">
+  <div class="grab" aria-hidden="true"></div>
+  <div class="sheet-h">
+    <h2 id="edit-title">Edit meal</h2>
+    <button type="button" class="icon-btn" data-close aria-label="Close"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+  </div>
+  <div id="edit-body"></div>
+</dialog>
+
+<!-- Photo viewer -->
+<dialog id="viewer" class="viewer" aria-label="Meal photo" closedby="any">
+  <form method="dialog"><button class="viewer-close" aria-label="Close photo"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button></form>
+  <img id="viewer-img" alt="">
+</dialog>
+
+<div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+<script src="/app.js"></script>
+</body>
+</html>

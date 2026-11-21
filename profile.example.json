@@ -1,0 +1,16 @@
+{
+  "about": "30-year-old woman, 165 cm, 60 kg, runs 3x a week, trying to eat more protein.",
+  "cuisine": "Malaysian",
+  "notes": "Watching saturated fat. Prefers short, practical tips.",
+  "targets": {
+    "kcal": 2000,
+    "protein_g": 110,
+    "carbs_g": 230,
+    "fat_g": 65,
+    "sat_fat_g": 18,
+    "cholesterol_mg": 300,
+    "fiber_g": 30,
+    "soluble_fiber_g": 8,
+    "sodium_mg": 2000
+  }
+}

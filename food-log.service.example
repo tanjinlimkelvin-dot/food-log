@@ -1,0 +1,14 @@
+# systemd user unit: ~/.config/systemd/user/food-log.service
+# systemctl --user daemon-reload && systemctl --user enable --now food-log
+[Unit]
+Description=Food log
+After=network-online.target
+
+[Service]
+WorkingDirectory=%h/food-log
+EnvironmentFile=%h/food-log/.env
+ExecStart=/usr/bin/python3 server.py
+Restart=on-failure
+
+[Install]
+WantedBy=default.target
